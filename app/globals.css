@@ -507,15 +507,15 @@ a {
   margin-top: 5px; color: #9e9e9e !important; font-size: 17px; line-height: 1.4;
 }
 .spread-grid {
-  display: grid; grid-template-columns: repeat(4, minmax(0, 220px));
+  display: grid; grid-template-columns: repeat(4, minmax(0, 180px));
   justify-content: space-between; column-gap: 40px; row-gap: 74px;
   max-width: 1120px; margin: 0 auto;
 }
 .spread-item { min-width: 0; text-align: center; }
 
 .circ-outer {
-  width: 220px;
-  height: 220px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   background: #a2a2a2;
   position: relative;
@@ -551,12 +551,12 @@ a {
 }
 
 @media (max-width: 1400px) {
-  .spread-grid { grid-template-columns: repeat(4, minmax(0, 180px)); }
-  .circ-outer { width: min(100%, 180px); height: auto; aspect-ratio: 1; }
+  .spread-grid { grid-template-columns: repeat(4, minmax(0, 150px)); }
+  .circ-outer { width: min(100%, 150px); height: auto; aspect-ratio: 1; }
 }
 @media (max-width: 900px) {
-  .spread-grid { grid-template-columns: repeat(2, minmax(0, 190px)); justify-content: space-evenly; }
-  .circ-outer { width: min(100%, 190px); }
+  .spread-grid { grid-template-columns: repeat(2, minmax(0, 160px)); justify-content: space-evenly; }
+  .circ-outer { width: min(100%, 160px); }
   .info-nav { display: none; }
 }
 @media (max-width: 560px) {
@@ -923,6 +923,28 @@ a {
 }
 
 /* ---------- misc ---------- */
+
+.info-panel-content { max-width: 520px; height: 100dvh; padding: clamp(25px, 5vh, 48px) 48px 24px; }
+.info-panel-header { padding-bottom: 18px; border-bottom: 1px solid rgba(255,255,255,0.14); }
+.info-panel-header span { color: #f6284b; font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; }
+.info-panel-header h2 { margin-top: 8px; font-size: 34px; text-transform: none; }
+.info-panel-copy { display: grid; gap: 12px; padding-top: 20px; }
+.info-panel-copy p,
+.info-panel-section p,
+.info-panel-note p { color: rgba(255,255,255,0.72); font-size: 12px; line-height: 1.6; }
+.info-panel-section { margin-top: 22px; }
+.info-panel-section h3 { margin-bottom: 11px; color: #fff; font-size: 15px; text-transform: none; letter-spacing: 0; }
+.info-panel-note { margin-top: 22px; padding: 13px 16px; border-left: 3px solid #f6284b; background: rgba(255,255,255,0.055); }
+.info-panel-note strong { display: block; margin-bottom: 7px; color: #fff; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; }
+.info-panel-note p { font-size: 11px; line-height: 1.65; }
+
+@media (max-width: 500px) {
+  .info-panel-content { padding: 25px 25px 20px; }
+  .info-panel-header h2 { font-size: 29px; }
+  .info-panel-copy p, .info-panel-section p { font-size: 11px; line-height: 1.5; }
+  .info-panel-copy { gap: 9px; padding-top: 15px; }
+  .info-panel-section, .info-panel-note { margin-top: 16px; }
+}
 
 .no-scrollbar::-webkit-scrollbar {
   display: none;

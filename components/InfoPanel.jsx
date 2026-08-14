@@ -21,7 +21,7 @@ export default function InfoPanel({ open, onClose }) {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed top-0 right-0 z-[80] h-screen w-full sm:w-160 overflow-y-auto"
+            className="fixed top-0 right-0 z-[80] h-dvh w-full sm:w-160 overflow-hidden"
             style={{ background: "var(--panel-dark)", color: "#fff" }}
           >
             <button
@@ -31,36 +31,48 @@ export default function InfoPanel({ open, onClose }) {
             >
               &times;
             </button>
-            <div className="section-pad py-10">
-              <h2 className="mb-6">Information</h2>
-              <p className="text-sm leading-relaxed opacity-80">
-                The Covid&ndash;19 pandemic affected the whole world &mdash;
-                some countries far worse than others. This dashboard is a
-                front-end engineering study recreating a well-known 2020 data
-                visualization, limited to a snapshot of the worst-affected
-                countries at the time. It is not intended to be a
-                comprehensive or current report, nor does it offer medical or
-                policy opinion.
-                <br />
-                <br />
-                Data shown is a fixed historical snapshot (31 May 2020) used
-                purely to demonstrate layout, charting and interaction design
-                &mdash; it is not live and should not be relied upon.
-              </p>
-              <h4 className="mt-10 mb-3 font-heading text-sm tracking-wide uppercase">
-                About this build
-              </h4>
-              <p className="text-sm leading-relaxed opacity-80">
-                Built with Next.js, Tailwind CSS and Framer Motion as a
-                pixel-conscious UI replica exercise &mdash; every chart below
-                is hand-built from plain markup and SVG, no charting library
-                included.
-              </p>
-              <div className="mt-10 pt-6 border-t border-white/10 text-xs opacity-50 leading-relaxed">
-                Whilst every attempt is made to keep the interface faithful,
-                this is an unofficial, non-commercial recreation for
-                evaluation purposes only.
+            <div className="info-panel-content">
+              <header className="info-panel-header">
+                <span>Covid&ndash;19 Dashboard</span>
+                <h2>Information</h2>
+              </header>
+
+              <div className="info-panel-copy">
+                <p>
+                  The Covid&ndash;19 pandemic affected the whole world &mdash;
+                  some countries far worse than others. This dashboard is a
+                  front-end engineering study recreating a well-known 2020
+                  data visualization.
+                </p>
+                <p>
+                  The information is limited to a historical snapshot of the
+                  worst-affected countries at that time. It is designed to be
+                  informative, user-friendly and easy to understand.
+                </p>
+                <p>
+                  Data shown is a fixed historical snapshot (31 May 2020),
+                  used purely to demonstrate layout, charting and interaction
+                  design. It is not live and should not be relied upon.
+                </p>
               </div>
+
+              <section className="info-panel-section">
+                <h3>About this build</h3>
+                <p>
+                  Built with Next.js, Tailwind CSS and Framer Motion as a
+                  pixel-conscious UI replica exercise. Every chart is
+                  hand-built from plain markup and SVG without a charting
+                  library.
+                </p>
+              </section>
+
+              <aside className="info-panel-note">
+                <strong>Please note</strong>
+                <p>
+                  This is an unofficial, non-commercial recreation for
+                  evaluation purposes only. It does not provide medical advice.
+                </p>
+              </aside>
             </div>
           </motion.div>
         </>
